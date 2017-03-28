@@ -1,0 +1,70 @@
+<h2>Cadastro de candidato</h2>
+<form ng-submit="sendForm()" name="form">
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="form-group" ng-class="{ 'has-error' : (form.$invalid && !form.$pristine) || (form.nome.$invalid && !form.nome.$pristine) }">
+                <label for="nome">Nome:</label>
+                <input required ng-model="model.person.nome" type="text" class="form-control" name="nome" placeholder="Nome">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.nascimento.$invalid && !form.nascimento.$pristine }">
+                <label for="nascimento">Data de nascimento:</label>
+                <input ui-mask="99/99/9999" ng-model="model.person.dataNascimento" type="text" class="form-control" name="nascimento" ui-mask-placeholder
+                    placeholder="Data de Nascimento">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.email.$invalid && !form.email.$pristine }">
+                <label for="email">E-mail:</label>
+                <input ng-model="model.person.email" type="email" class="form-control" name="email" placeholder="Enter email">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.telefone-residencial.$invalid && !form.telefone-residencial.$pristine }">
+                <label for="telefone-residencial">Telefone residêncial:</label>
+                <input ui-mask="(99) 9999-9999" ng-model="model.person.telefoneResidencial" type="text" class="form-control" name="telefone-residencial"
+                    ui-mask-placeholder placeholder="Telefone residêncial">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.telefone-celular.$invalid && !form.telefone-celular.$pristine }">
+                <label for="telefone-celular">Telefone celular:</label>
+                <input ui-mask="(99) 9?9999-9999" ng-model="model.person.telefoneCelular" type="text" class="form-control" name="telefone-celular"
+                    ui-mask-placeholder placeholder="Telefone celular">
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' :  (form.$invalid && !form.$pristine) || (form.sexo.$invalid && !form.sexo.$pristine) }">
+                <label for="sexo">Sexo:</label>
+                <select class="form-control" ng-model="model.person.sexo" name="sexo" required ng-options="sexo.value as sexo.description for sexo in model.sexos">
+                        <option value="" ng-if="false"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Tipo de deficiência:</label>
+                <div class="checkbox" ng-repeat="(key, value) in model.tiposDeficiencia">
+                    <label><input ng-model="model.person[key]" type="checkbox">{{value.description}}</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.detalhes-deficiencia.$invalid && !form.detalhes-deficiencia.$pristine }">
+                <label for="detalhes-deficiencia">Detalhes da deficiência:</label>
+                <textarea ng-model="model.person.detalhesDeficiencia" class="form-control" placeholder="Detalhes da deficiência" rows="4"
+                    cols="50"></textarea>
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.endereco.$invalid && !form.endereco.$pristine }">
+                <label for="endereco">Endereço completo:</label>
+                <input ng-model="model.person.endereco" type="text" class="form-control" name="endereco" placeholder="Endereço completo">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.cidade.$invalid && !form.cidade.$pristine }">
+                <label for="cidade">Cidade/UF:</label>
+                <input ng-model="model.person.cidade" type="text" class="form-control" name="cidade" placeholder="Cidade/UF">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.cep.$invalid && !form.cep.$pristine }">
+                <label for="cep">Cep:</label>
+                <input ui-mask="99999-999" ng-model="model.person.cep" type="text" class="form-control" name="cep" ui-mask-placeholder placeholder="Cep">
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.curriculo.$invalid && !form.curriculo.$pristine }">
+                <label for="curriculo">Mini currículo:</label>
+                <textarea ng-model="model.person.detalhesCurriculo" class="form-control" placeholder="Mini currículo" rows="4" cols="50"></textarea>
+            </div>
+            <div class="form-group" ng-class="{'has-error': (form.$invalid && !form.$pristine) || form.atuacao.$invalid && !form.atuacao.$pristine }">
+                <label for="atuacao">Área de atuação desejável:</label>
+                <input ng-model="model.person.areaAtuacao" type="text" class="form-control" name="atuacao" placeholder="Área de atuação desejável">
+            </div>
+        </div>
+    </div>
+    <button type="submit" ng-click="validateForm()" class="btn btn-default">Enviar</button>
+</form>

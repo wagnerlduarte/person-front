@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+
+<head>
+  <!-- ${} -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--build:css(./) /assets/styles/vendor.min.css-->
+  <!--bower:css-->
+  <link rel="stylesheet" href="/bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="/bower_components/angular-ui-notification/dist/angular-ui-notification.css" />
+  <!--endbower-->
+  <!--endbuild-->
+
+  <!--build:css(.tmp) /assets/styles/app.min.css-->
+  <!--inject:css-->
+  <link rel="stylesheet" href="/assets/styles/callout.css">
+  <link rel="stylesheet" href="/assets/styles/custom.css">
+  <!--endinject-->
+  <!--endbuild-->
+</head>
+
+<body>
+  <!-- <div id="loader"></div> -->
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand font-bold" href="javascript:;">Projeto Social</a>
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li ui-sref-active="active"><a ui-sref="cadastro">Cadastro de candidato</a></li>
+          <li><a ui-sref-active="active" ui-sref="listagem">Listagem de candidatos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container main-container">
+    <div ui-view id="content"></div>
+  </div>
+
+  <!--bower:js-->
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/json3/lib/json3.js"></script>
+  <script src="/bower_components/es5-shim/es5-shim.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-cookies/angular-cookies.js"></script>
+  <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+  <script src="/bower_components/angular-animate/angular-animate.js"></script>
+  <script src="/bower_components/angular-touch/angular-touch.js"></script>
+  <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="/bower_components/angular-strap/dist/angular-strap.js"></script>
+  <script src="/bower_components/angular-strap/dist/angular-strap.tpl.js"></script>
+  <script src="/bower_components/underscore/underscore.js"></script>
+  <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+  <script src="/bower_components/angular-input-masks/angular-input-masks-standalone.js"></script>
+  <script src="/bower_components/angular-loading-bar/build/loading-bar.js"></script>
+  <script src="/bower_components/angular-i18n/angular-locale_pt-br.js"></script>
+  <script src="/bower_components/angular-messages/angular-messages.js"></script>
+  <script src="/bower_components/angular-ui-mask/dist/mask.js"></script>
+  <script src="/bower_components/ngMask/dist/ngMask.js"></script>
+  <script src="/bower_components/angular-ui-notification/dist/angular-ui-notification.js"></script>
+  <script src="/bower_components/string-mask/src/string-mask.js"></script>
+  <script src="/bower_components/br-masks/releases/br-masks.js"></script>
+  <script src="/bower_components/angular-br-filters/release/angular-br-filters.js"></script>
+  <!--endbower-->
+
+  <!-- inject:js -->
+  <script src="/app.js"></script>
+  <script src="/person/person.service.js"></script>
+  <script src="/person/listagem.controller.js"></script>
+  <script src="/person/cadastro.controller.js"></script>
+  <!--endinject -->
+</body>
+
+</html>
